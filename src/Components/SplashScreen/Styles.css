@@ -1,0 +1,100 @@
+.leftBox {
+  display: inline-block;
+  background-color: #EB9090;
+  width: 50%;
+  height: 100vh;
+  transition: width 2s ease-in-out;
+}
+
+.rightBox {
+  background-color: #9AC3F3;
+  width: 50%;
+  height: 100vh;
+  transition: width 2s ease-in-out;
+  float: right;
+}
+
+.logo {
+  position: fixed;
+  width: 30vw;
+  aspect-ratio: 1/1;
+  left: 50%;
+  top: 50%;
+  margin-top: -15vw;
+  margin-left: -15vw;
+  animation: spin 11s infinite linear;
+
+  filter: drop-shadow(3px 3px 3px #2c2c2c);
+  opacity: 1;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
+  display: inline-block;
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes shrink {
+  from {
+    -webkit-transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: rotate(0, 0);
+  }
+}
+
+.enterButton {
+  position: fixed;
+  width: 10vw;
+  aspect-ratio: 1/1;
+  left: 50%;
+  top: 50%;
+  margin-top: -5vw;
+  margin-left: -5vw;
+
+  background-color: #d48ef0;
+  border-radius: 50%;
+  border: none;
+
+  cursor: pointer;
+
+  opacity: 1;
+  -webkit-transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  transition: all 1s linear;
+
+  animation: pulse 0.8s infinite;
+
+  font-size: 1vw;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
