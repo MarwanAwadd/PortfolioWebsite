@@ -3,14 +3,23 @@ import { useStyles } from "./Styles";
 import { Box, Grid, Typography } from "@material-ui/core"
 import { Link } from 'react-scroll'
 
-const NavBarPC = () => {
+const NavBarPC = ({ setNavBarOffset }) => {
     const classes = useStyles()
 
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
     const navBarOffset = (10 * vh) / 100;
+    setNavBarOffset(navBarOffset);
+
+    try {
+        console.log(document.getElementById("navbar").getBoundingClientRect().height);
+        const navBarOffset = document.getElementById("navbar").getBoundingClientRect().height;
+        setNavBarOffset(navBarOffset);
+
+    } catch (error) {
+    }
 
     return (
-        <Grid container className={classes.nav} justifyContent="center" alignItems="center" direction="row" >
+        <Grid container id="navbar" className={classes.nav} justifyContent="center" alignItems="center" direction="row" >
             <Grid item xs={4} sm={4} md={4} lg={4} justifyContent="center" alignItems="center" className={classes.navLogo} >
                 <Link activeClass="active" to="homePage" spy={true} smooth={true} style={{ height: "100%", width: "100%", justifyContent: "center", alignItems: "center", display: "flex"}}>
                     <Box display="flex" justifyContent="center" alignItems="center" style={{verticalAlign: "baseline"}} >Home</Box>

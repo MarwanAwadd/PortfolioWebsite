@@ -3,9 +3,10 @@ import { useStyles } from "./Styles";
 import Wave from 'react-wavify'
 import TypeAnimation from 'react-type-animation';
 import { Box, Icon } from "@material-ui/core";
-import { ArrowDownward } from "@material-ui/icons";
+import { ArrowDownward, AspectRatio } from "@material-ui/icons";
+import { Link } from "react-scroll";
 
-const HomePage = () => {
+const HomePage = ({ navBarOffset }) => {
     const classes = useStyles()
 
     return (
@@ -25,9 +26,11 @@ const HomePage = () => {
                 className={classes.text}
                 repeat="0"
             />
-            <Icon className={classes.downIcon}  >
-                <ArrowDownward fontSize="large" style={{color:"#FFF"}} />
-            </Icon>
+            <Link activeClass="active" to="aboutPage" spy={true} smooth={true} offset={-navBarOffset} style={{ height: "100%", width: "100%", justifyContent: "center", alignItems: "center", display: "flex"}}>
+                <Icon className={classes.downIcon}  >
+                    <ArrowDownward fontSize="large" style={{color:"#FFF", width: "70%", AspectRatio: "1"}} />
+                </Icon>
+            </Link>
         </Box>
     )
 }

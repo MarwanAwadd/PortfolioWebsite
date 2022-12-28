@@ -8,14 +8,15 @@ export const useStyles = makeStyles((theme) => ({
         backgroundColor: "#EB9090",
     },
     leftBlock: {
+        width: "100%",
         display: "flex",
         aspectRatio: "1/1",
         backgroundColor: "#9AC3F3",
         borderRadius: "50%",
         padding: "2vw",
         boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-        [theme.breakpoints.down('sm')]: {
-            height: "30%",
+        [theme.breakpoints.down('md')]: {
+            width: "50%",
         }
     },
     rightBlock: {
@@ -25,7 +26,7 @@ export const useStyles = makeStyles((theme) => ({
         padding: "3vw",
         boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
         [theme.breakpoints.down('sm')]: {
-            height: "50%",
+            height: "35%",
         }
     },
     imageContainer: {
@@ -37,7 +38,7 @@ export const useStyles = makeStyles((theme) => ({
         transitionDelay: '800ms',
         boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
         [theme.breakpoints.down('sm')]: {
-            width: "15vw",
+            width: "100%",
         }
     },
     aboutMeTextBox: {
@@ -48,21 +49,26 @@ export const useStyles = makeStyles((theme) => ({
         boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
         marginTop: "0.5vw",
         overflow: "overlay",
+        display: "flex",
+        justifyContent: "center",
         [theme.breakpoints.down('sm')]: {
             padding: "1vw",
             borderRadius: "3vw",
             height: "15vh",
+            alignItems: "flex-start",
         }
     },
     aboutMeText: {
         fontFamily: "'Montserrat', sans-serif;",
         fontWeight: theme.typography.fontWeightMedium,
         color: "#000",
-        fontSize: "18px",
+        fontSize: "16px",
         userSelect: "none",
         justifySelf: "flex-start",
         textAlign: "center",
-        
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "13px",
+        }
     },
     gridContainerAUC : {
         transition: "ease 0.8s all",
